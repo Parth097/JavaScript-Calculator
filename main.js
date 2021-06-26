@@ -1,3 +1,10 @@
+/*
+A JavaScript file where all the functions of the calculator are made. 
+The backend of the calculator. 
+*/
+
+// Initializing variables 
+
 const display1El = document.querySelector('.display-1'); 
 const display2El = document.querySelector('.display-2'); 
 const tempResultEl = document.querySelector('.tempResult'); 
