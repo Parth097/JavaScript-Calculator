@@ -83,5 +83,6 @@ function mathOperation() {
 }
 // checking to see the verified signature
 //final check
+// verification sorted?
 
 
