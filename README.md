@@ -10,6 +10,6 @@ as well as learning the syntax.
 I have chosen to use Visual Studio Code as the IDE for this project.
 I am using GitHub to regularly update, and create a back-up if needed. 
 
-I have added the GPG Signature.
+I have added the GPG Signature, and added the key to my profile allowing for verified commits.
 
 Parth Sharma
