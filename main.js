@@ -53,6 +53,7 @@ operationEl.forEach( operation => {
             result = parseFloat(display2Num); 
         }
         clearVariable(operationName);
+        lastOperation = operationName;
         console.log(result);
     })
 })
@@ -65,6 +66,20 @@ function clearVariable(name = '') {
     display2El.innerText = ' ';
     display2Num = ' ';
     tempResultEl.innerText = result;
+}
+
+function mathOperation() {
+    if (lastOperation === 'X'){
+        result = parseFloat(result) * parseFloat(display2Num);
+    } else if (lastOperation === '+'){
+        result = parseFloat(result) + parseFloat(display2Num);
+    }else if (lastOperation === '-'){
+        result = parseFloat(result) - parseFloat(display2Num);
+    }else if (lastOperation === '/'){
+        result = parseFloat(result) / parseFloat(display2Num);
+    }else if (lastOperation === '%'){
+        result = parseFloat(result) % parseFloat(display2Num);
+    }
 }
 
 
