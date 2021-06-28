@@ -68,6 +68,8 @@ function clearVariable(name = '') {
     tempResultEl.innerText = result;
 }
 
+// Creating the math operations for the calculator.
+
 function mathOperation() {
     if (lastOperation === 'X'){
         result = parseFloat(result) * parseFloat(display2Num);
@@ -81,9 +83,19 @@ function mathOperation() {
         result = parseFloat(result) % parseFloat(display2Num);
     }
 }
-// checking to see the verified signature
-//final check
-// verification sorted?
-// Final Tests
+
+// Creating the = sign event listener, and calling the math operation once it has been pressed. 
+// Also ensured that the display fields have been set to empty as they are not to be used after the = sign. 
+
+equalEl.addEventListener('click', (e) =>{
+    if( !display1Num || !display2Num) return;
+    haveDot = false;
+    mathOperation();
+    clearVariable();
+    display2El.innerText = result;
+    tempResultEl.innerText = '';
+    display2Num = result;
+    display1Num='';
+})
 
 
