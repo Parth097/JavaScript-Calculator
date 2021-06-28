@@ -118,3 +118,63 @@ clearLastEl.addEventListener('click', (e) =>{
     display2Num = '';
 })
 
+//Adding the keypad functionality. 
+//Allowing the user to use the keybad to use the calculator.
+
+window.addEventListener('keydown', (e)=>{
+    if(
+        e.key === '0' || 
+        e.key === '1' || 
+        e.key === '2' || 
+        e.key === '3' || 
+        e.key === '4' || 
+        e.key === '5' || 
+        e.key === '6' || 
+        e.key === '7' || 
+        e.key === '8' || 
+        e.key === '9' || 
+        e.key === '.'
+    ){
+        clickButtonEl(e.key);
+    } else if( 
+        e.key === '+' ||
+        e.key === '-' ||
+        e.key === '%' ||
+        e.key === '/' 
+    ){
+        clickOperation(e.key);
+    }else if (e.key === '*'){ //Here i have ensured that when pressing the * symbol, it checks for the X.
+        clickOperation('X');  // The program is checking the inner text and that is X.
+    } else if(e.key == 'Enter' || e.key === '='){ // This part allows us to click the ENTER key or = for the result. 
+        clickEqual();
+    }
+});
+
+// Creating a function to check which key has been pressed.
+// This has been done by checking the inner text of the buttons,
+// then comparing it to the keys that we have assigned above to see which key has been pressed.
+
+function clickButtonEl(key){
+    numbersEl.forEach(button => {
+        if(button.innerText === key){
+            button.click();
+        }
+    })
+}
+
+//Creating the keypad operation function, in the same way as they numbers done previously.
+
+function clickOperation(key){
+    operationEl.forEach(button => {
+        if(button.innerText === key){
+            button.click();
+        }
+    })
+}
+
+//Creating the function for the equal sign, when pressed equal is clicked. 
+
+function clickEqual(){
+    equalEl.click();
+}
+
