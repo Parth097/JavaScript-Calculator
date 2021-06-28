@@ -8,11 +8,11 @@ The backend of the calculator.
 const display1El = document.querySelector('.display-1'); 
 const display2El = document.querySelector('.display-2'); 
 const tempResultEl = document.querySelector('.tempResult'); 
+const equalEl = document.querySelector('.equal');
+const clearAllEl = document.querySelector('.all-clear');
+const clearLastEl = document.querySelector('.last-entity-clear');
 const numbersEl = document.querySelectorAll('.number');
 const operationEl  = document.querySelectorAll('.operation');
-const equalEl = document.querySelector('.equal');
-const clearEl = document.querySelector('.all-clear');
-const clearLastEl = document.querySelectorAll('.last-entity-clear');
 
 let display1Num = '';
 let display2Num = '';
@@ -98,4 +98,23 @@ equalEl.addEventListener('click', (e) =>{
     display1Num='';
 })
 
+// Cleating the clear all functionality of the calculator.
+// Basically setting all the numbers back to '0' once the button has been pressed.
+
+clearAllEl.addEventListener('click', (e) =>{
+    display1El.innerText = '0';
+    display2El.innerText = '0';
+    tempResultEl.innerText = '0';
+    display1Num = '';
+    display2Num = '';
+    result = '';
+})
+
+//Creating the clear last input into the calculator. 
+// Removing the last input and setting it back to 0, but keeping the history and tempResult the same. 
+
+clearLastEl.addEventListener('click', (e) =>{
+    display2El.innerText = '0';
+    display2Num = '';
+})
 
